@@ -26,7 +26,6 @@ model User {
   avatarUrl             String?
   bio                   String?
   sessions              Session[]
-  posts                 Post[]
   mmavahi               Mmavahi[]
  
   bookmarks             Bookmark[]
@@ -59,11 +58,7 @@ model Mmavahi {
   userId      String
   user        User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   attachments Media[]
-
   bookmarks Bookmark[]
-
- 
-  comments            Comment[]
   linkedNotifications Notification[]
   createdAt           DateTime       @default(now())
   // Ek alanlar
@@ -82,16 +77,11 @@ model Mmavahi {
 
 model Media {
   id     String    @id @default(cuid())
-  postId String?
-  post   Post?     @relation(fields: [postId], references: [id], onDelete: SetNull)
   type   MediaType
   url    String
-
   createdAt     DateTime     @default(now())
   Mmavahi       Mmavahi?     @relation(fields: [mmavahiId], references: [id])
   mmavahiId     String?
-  
-
   @@map("post_media")
 }
 
@@ -104,14 +94,8 @@ model Bookmark {
   id     String @id @default(cuid())
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  postId String
-  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
-
   createdAt     DateTime     @default(now())
   Mmavahi       Mmavahi?     @relation(fields: [mmavahiId], references: [id])
-  
-
-  @@unique([userId, postId])
   @@map("bookmarks")
 }
 
@@ -121,16 +105,11 @@ model Notification {
   recipient   User             @relation("Recipient", fields: [recipientId], references: [id], onDelete: Cascade)
   issuerId    String
   issuer      User             @relation("Issuer", fields: [issuerId], references: [id], onDelete: Cascade)
-  postId      String?
-  post        Post?            @relation(fields: [postId], references: [id], onDelete: Cascade)
   type        NotificationType
   read        Boolean          @default(false)
-
   createdAt     DateTime     @default(now())
   Mmavahi       Mmavahi?     @relation(fields: [mmavahiId], references: [id])
   mmavahiId     String?
-  
-
   @@map("notifications")
 }
 
