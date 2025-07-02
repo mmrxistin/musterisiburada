@@ -1,9 +1,12 @@
-//Bismillahirrahmanirrahim 
+//Bismillahirrahmanirrahim
+//Elhamdullillahirabbulalemin
+//Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi, ecmain
+//SuphanAllahi velhamdulillahi ve La ilahe illallahu vAllahu Ekber
 
 "use client";
 
 import InfiniteScrollContainer from "@/components/InfiniteScrollContainer";
-import PostsLoadingSkeleton from "@/components/posts/PostsLoadingSkeleton";
+import PostsLoadingSkeleton from "@/components/mmavahi/PostsLoadingSkeleton";
 import kyInstance from "@/lib/ky";
 import { NotificationsPage } from "@/lib/types";
 import {
@@ -29,7 +32,7 @@ export default function Notifications() {
       kyInstance
         .get(
           "/api/notifications",
-          pageParam ? { searchParams: { cursor: pageParam } } : {},
+          pageParam ? { params: { cursor: pageParam } } : {},
         )
         .json<NotificationsPage>(),
     initialPageParam: null as string | null,

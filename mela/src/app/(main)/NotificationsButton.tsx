@@ -1,4 +1,7 @@
 // Bismillahirrahmanirahim 
+// Elhamdullillahirabbulalemin
+// Es-selatu vesselamu ala rasulina Muhammedin ve ala alihi ve sahbihi, ecmain
+// SuphanAllahi velhamdulillahi ve La ilahe illallahu vAllahu Ekber
 
 "use client";
 
@@ -21,7 +24,7 @@ export default function NotificationsButton({
     queryFn: () =>
       kyInstance
         .get("/api/notifications/unread-count")
-        .json<NotificationCountInfo>(),
+        .then(res => res.data as NotificationCountInfo),
     initialData: initialState,
     refetchInterval: 60 * 1000,
   });
