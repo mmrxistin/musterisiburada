@@ -96,6 +96,7 @@ model Bookmark {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt     DateTime     @default(now())
   Mmavahi       Mmavahi?     @relation(fields: [mmavahiId], references: [id])
+  mmavahiId     String?
   @@map("bookmarks")
 }
 
