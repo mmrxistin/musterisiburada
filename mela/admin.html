@@ -1,0 +1,38 @@
+<!--Bismillahirrahmanirrahim
+    Elhamdulillahirabbulalemin
+    Es selatu vesselamu ala rasulina Muhammedin
+    SUPHANALLAHI VELHAMDULILLAHI VE LA ILAHE ILLALLAHU VALLAHU EKBER-->
+<!doctype html>
+<html lang="ku">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Takekes</title>
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Admin — Takekes</h1>
+      <p class="lead">Rûpelê adminê hêsan: li vir dikarin hûn posts.json biguherînin û weşandin.</p>
+    </header>
+
+    <section id="admin-area">
+      <div id="login-box">
+        <label>Password (local only): <input id="pw" type="password"/></label>
+        <button id="enter">Enter</button>
+      </div>
+
+      <div id="editor" style="display:none">
+        <div style="margin-bottom:12px">
+          <button id="new-post">New post</button>
+          <button id="export">Export posts.json</button>
+        </div>
+        <div id="posts-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

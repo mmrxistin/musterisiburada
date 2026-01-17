@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Berxwedan — Rûpela Destpêkê",
+    "date": "2026-01-14",
+    "excerpt": "Ev mînakek bloge hêsan e li ser berxwedan û zimanê Kurdî. Lê zêdetir bixwîne.",
+    "content": "<p>Bi xêr hatin ser rûpela me. Ev nîqaş ji bo parvekirina zanîn û pêşkeftina civakî ye.</p>"
+  },
+  {
+    "id": 2,
+    "title": "Çawa postek nû parvebikin",
+    "date": "2026-01-14",
+    "excerpt": "Rêwîtiyên hêsan bo nûkirina naverokên statîk bi JavaScript.",
+    "content": "<p>Ev misal nîşan dide ka we çawa dikarin JSON-ê bixwînin û di rûpelê de nîşan bidin.</p>"
+  }
+]
